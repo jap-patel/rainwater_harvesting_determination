@@ -16,7 +16,7 @@ def main():
 
 	html_templ = """
 	<div style="background-color:blue;padding:10px;">
-	<h3 style="color:cyan">Very Simple Linear Regression Web App for Salary Determination</h3>
+	<h3 style="color:cyan">we will determine the amount of water needed to be harvested as per the need of the family</h3>
 	</div>
 	"""
 
@@ -44,13 +44,13 @@ def main():
 
 			predicted_waterAmount = regressor.predict(experience_reshaped)
 
-			st.info("the total Rainwater you should harvest for {} people in the family is : {}".format(experience,(predicted_waterAmount[0][0].round(2))))
+			st.info("The total rainwater required to be harvested for 1 year time for {} people in the family is : {} liters.".format(experience,(predicted_waterAmount[0][0].round(2))))
 
 # About CHOICE
 	if choice == 'About':
 		st.subheader("About")
 		st.markdown("""
-			## Rainwater harvesting Determination
+			## Rainwater harvesting Determination""")
 
 if __name__ == '__main__':
 	main()
