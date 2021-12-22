@@ -69,7 +69,7 @@ we used visual studio code to run our yolov5 linear regression model over the lo
 * we can use this project to determine the the amount of water needed to be harvested as per the need of the family.
 
 
-<img src="Rainwater harvesting Determination.png" alt="Rainwater harvesting Determining image" width="600" height="800"/>   
+<img src="Rainwater harvesting Determination.png" alt="Rainwater harvesting Determining image" width="800" height="600"/>   
 
 <!-- LICENSE -->
 ## License
