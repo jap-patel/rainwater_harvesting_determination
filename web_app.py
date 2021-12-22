@@ -10,9 +10,9 @@ def load_prediction_model(model_file):
 	return loaded_model
 
 def main():
-	"""Very Simple Linear Regression App"""
+	"""Rainwater harvesting determining App"""
 
-	st.title("Salary Determination App")
+	st.title("Rainwater harvesting determining App")
 
 	html_templ = """
 	<div style="background-color:blue;padding:10px;">
@@ -22,41 +22,35 @@ def main():
 
 	st.markdown(html_templ,unsafe_allow_html=True)
 
-	activity = ["Salary Determination","About"]
+	activity = ["Rainwater harvesting Determination","About"]
 	choice = st.sidebar.selectbox("Menu",activity)
 
-# Salary Determination CHOICE
-	if choice == 'Salary Determination':
+# Rainwater harvesting Determination CHOICE
+	if choice == 'Rainwater harvesting Determination':
 
-		st.subheader("Salary Determination")
+		st.subheader("Rainwater harvesting Determination")
 
-		experience = st.slider("Years of Experience",0,20)
+		experience = st.slider("No. of people in the family",1,20)
 
 		#st.write(type(experience))
 
 		if st.button("Determination"):
 
-			regressor = load_prediction_model("models/linear_regression_salary.pkl")
+			regressor = load_prediction_model("models/linear_regression_water.pkl")
 			experience_reshaped = np.array(experience).reshape(-1,1)
 
 			#st.write(type(experience_reshaped))
 			#st.write(experience_reshaped.shape)
 
-			predicted_salary = regressor.predict(experience_reshaped)
+			predicted_waterAmount = regressor.predict(experience_reshaped)
 
-			st.info("Salary related to {} years of experience: {}".format(experience,(predicted_salary[0][0].round(2))))
+			st.info("the total Rainwater you should harvest for {} people in the family is : {}".format(experience,(predicted_waterAmount[0][0].round(2))))
 
 # About CHOICE
 	if choice == 'About':
 		st.subheader("About")
 		st.markdown("""
-			## Very Simple Linear Regression App
-			
-			##### By
-			+ **[Rosario Moscato LAB](https://www.youtube.com/channel/UCDn-FahQNJQOekLrOcR7-7Q)**
-			+ [rosariomoscatolab@gmail.com](mailto:rosariomoscatolab@gmail.com)
-			""")
-
+			## Rainwater harvesting Determination
 
 if __name__ == '__main__':
 	main()
